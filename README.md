@@ -1,9 +1,9 @@
-# Comparing Classifiers
+# Capstone Project
 
 #### Overview
 The idea is to create a model that predicts what the fuel consumption of a car would be at the end of short or medium period, based on previous consumption. for this I am going to use time series to me make a forecast.
 
-Some companies use cards called "fuelcards" that they give to their drivers so they can tank their vehicles and in this way keep track of how much money they spend on gasoline. This is a Dataset that contains information of one vehicle and their consumption during 2017 to 2024.
+Some companies use cards called "fuelcards" that they give to their drivers so they can tank their vehicles and in this way companies can keep track of how much money they spend on gasoline. This is a Dataset that contains information of one vehicle and their consumption during 2017 to 2024.
 
 ### Dataset:
 
@@ -72,7 +72,7 @@ It looks like these have some autocorrelation to cover at lag 5.
 
 ![](./images/ArimaSummary.png)
 
-Summarizing we realize that the AIC metric has a value of 1801.
+Summarizing the model we realize that the AIC metric has a value of 1801.
 
 To help me find the best parameters I used auto_arima which helps me with this objective through Grid Search. according to this the best model is (1,1,1) So I created an Arima model with those parameters and this was the result:
 
