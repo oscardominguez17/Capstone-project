@@ -26,7 +26,7 @@ The dataset has 622 entries and the next features:
  * currency: currency in which the payment was made
  * site_state: state code
 
-###  Understanding the Data
+### Data Understanding
 We start cleaning the data set, it has 262 null dates that could not be formatted correctly, so we discard them.
 We also detect and remove outliers, we deleted 12 rows in this process.
 
@@ -100,6 +100,13 @@ it Looks near to a normal distribution, there is only a peak around -9 which is 
 
 ![](./images/ForecastData.png)
 
+## LSTM Model
+
+Now let's try with another model, in this case I am going to try recurrent with neural networks which have been shown to perform well with time series. with LSTM we can retain information over long sequences.
+
+![](./images/LSTM.png)
+
+After performing a Long Short Term Memory Cell (LSTM) model we obtained the best result with an RMSE of only 3.17, this confirms the great performance that recurrent neural networks can have in this type of situations.
 
 #### Conclusions
 
@@ -112,3 +119,20 @@ the following result for the analysis of a period of 31 days:
 * Forecast Fuel consumption: 343.74
 
 We obtained a MAE: 7.65 and RMSE: 9.13. Taking into account that a period of 31 days is a medium-term prediction, I think the model behaves in a good way and the error is not very high.
+
+After performing a Long Short Term Memory Cell (LSTM) model we obtained the best result with an RMSE of only 3.17, this confirms the good performance that recurrent neural networks can have in this type of situations.
+
+#### Next Steps and Recommendations
+
+* Expand the dataset to be able to perform a more general analysis with different types of vehicles, different engine capacities and references. With this, it will not be necessary to train a model for each vehicle and instead we will be able to train a more general model that takes the characteristics of the vehicles and identifies their relationship with gasoline consumption
+
+* Implement a section on the platform where the user can consult these predictions, whenever they want.
+
+
+### References
+
+1. LSTM Model
+https://medium.com/@rebeen.jaff/what-is-lstm-introduction-to-long-short-term-memory-66bd3855b9ce
+
+2. LSTM Forecast
+https://machinelearningmastery.com/time-series-forecasting-long-short-term-memory-network-python/
